@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+}
+.section {
+  @apply min-h-screen flex items-center justify-center;
+}
+.container {
+  @apply max-w-6xl mx-auto;
+}
+.logo {
+  @apply font-bold text-xl text-blue-700;
+}
+.menu {
+  @apply flex gap-4 font-semibold;
+}
+.headerOne {
+  @apply text-blue-500 my-3 uppercase text-5xl font-semibold;
+}
+.textOne {
+  @apply text-lg;
+}

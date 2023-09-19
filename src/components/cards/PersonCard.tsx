@@ -1,4 +1,4 @@
-import { personDataType } from "../pages/homepage/PersonPage";
+import { personDataType } from "../types/type";
 
 const PersonCard = ({ id, name, photo }: personDataType) => {
   return (

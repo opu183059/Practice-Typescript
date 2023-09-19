@@ -1,10 +1,17 @@
 # Type Script Practicing
 
-Name: `Akther uz zaman`
+- Here in this project I am practicing TypeScript with react. To use React I am using vite here. My learned TypeScript related things will be pushed here in this repository.
+
+- My Information
+  Name: `Akther uz zaman`
+  Email: `opuctg440@gmail.com`
+  Portfolio: `aktheruzzaman.netlify.app`
 
 ## Technologies Used
 
 - React
+- React Router Dom
+- React Icons
 - Typescript
 - Tailwind CSS
 

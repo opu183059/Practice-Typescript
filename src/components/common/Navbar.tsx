@@ -6,9 +6,9 @@ const Navbar = () => {
           <div className="logo">TypeScript</div>
           <div className="right">
             <div className="menu">
-              <a href="#Home">Home</a>
+              <a href="#home">Home</a>
               <a href="#persons">Persons</a>
-              <a href="#Contact">Contact</a>
+              <a href="#contact">Contact</a>
             </div>
           </div>
         </div>

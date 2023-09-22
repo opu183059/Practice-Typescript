@@ -5,10 +5,12 @@ interface AppState {
   random: number;
 }
 
-// Actions
+// Function
 type Increment = { type: "increment"; payload: number };
 type Decrement = { type: "decrement"; payload: number };
 type Random = { type: "random" };
+
+// Actions
 type AppActions = Increment | Decrement | Random;
 
 function appReducer(state: AppState, action: AppActions) {

@@ -1,5 +1,6 @@
 import Navbar from "../../common/Navbar";
 import Banner from "./Banner";
+import Contact from "./Contact";
 import PersonPage from "./PersonPage";
 
 const HomePageLayout = () => {
@@ -8,6 +9,7 @@ const HomePageLayout = () => {
       <Navbar></Navbar>
       <Banner></Banner>
       <PersonPage></PersonPage>
+      <Contact></Contact>
     </>
   );
 };

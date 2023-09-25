@@ -12,3 +12,8 @@ export type productDataType = {
   productRating: number;
 };
 
+export type passElement = {
+  children: React.ReactNode;
+};
+
+

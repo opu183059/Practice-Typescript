@@ -34,7 +34,10 @@ const Banner = () => {
   });
 
   return (
-    <div className="section bg-[url('https://img.freepik.com/premium-photo/clear-blue-sky-sunset-with-horizon-calm-ocean-sea-background-picturesque_31965-138504.jpg')] bg-cover">
+    <div
+      id="home"
+      className="section bg-[url('https://img.freepik.com/premium-photo/clear-blue-sky-sunset-with-horizon-calm-ocean-sea-background-picturesque_31965-138504.jpg')] bg-cover bg-fixed"
+    >
       <div className="text-center container">
         <h1 className="headerOne">Welcome to typescript practice</h1>
         <div className="flex gap-5 justify-center text-4xl text-blue-800 font-bold">

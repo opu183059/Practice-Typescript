@@ -2,6 +2,7 @@ import Navbar from "../../common/Navbar";
 import Banner from "./Banner";
 import Contact from "./Contact";
 import PersonPage from "./PersonPage";
+import Random from "./Random";
 
 const HomePageLayout = () => {
   return (
@@ -10,6 +11,7 @@ const HomePageLayout = () => {
       <Banner></Banner>
       <PersonPage></PersonPage>
       <Contact></Contact>
+      <Random></Random>
     </>
   );
 };

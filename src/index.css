@@ -24,5 +24,5 @@
   @apply text-lg;
 }
 .btn {
-  @apply px-3 py-2 border-2 rounded-md duration-300;
+  @apply px-3 py-2 rounded-md duration-300;
 }

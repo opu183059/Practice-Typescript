@@ -7,9 +7,3 @@ export interface AppAction {
     title: "title";
     payload: string
 }
-
-export interface FormData {
-    id: number | string;
-    userName: string;
-    message: string;
-}

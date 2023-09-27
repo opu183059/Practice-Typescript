@@ -10,6 +10,7 @@
 ## Technologies Used
 
 - React
+- React Redux
 - React Router Dom
 - React Icons
 - Typescript

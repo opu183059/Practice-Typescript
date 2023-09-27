@@ -2,7 +2,7 @@ import { personDataType } from "../types/type";
 
 const PersonCard = ({ id, name, photo }: personDataType) => {
   return (
-    <div className="rounded-lg p-5 shadow-lg hover:shadow-xl group">
+    <div className="rounded-lg p-5 shadow-lg hover:shadow-xl group cursor-pointer">
       <div className="overflow-hidden rounded-lg">
         <img
           src={photo}

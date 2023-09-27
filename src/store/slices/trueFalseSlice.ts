@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export interface globalToggle {
+    value: boolean
+}
+const initialState: globalToggle = {
+    value: false
+}
+
 export const trueFalseSlice = createSlice({
-    name: 'trueFalse',
-    initialState: {
-        value: true,
-    },
+    name: 'globalToggle',
+    initialState,
     reducers: {
         toggle: (state) => {
             state.value = !state.value
@@ -13,7 +18,5 @@ export const trueFalseSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { toggle } = trueFalseSlice.actions
-
 export default trueFalseSlice.reducer

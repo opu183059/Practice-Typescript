@@ -1,13 +1,11 @@
 import { useAppDispatch, useAppSelector } from "../../store/app/hook";
-import { toggle } from "../../store/feature/trueFalseSlice";
+import { toggle } from "../../store/slices/trueFalseSlice";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BsFillSunFill } from "react-icons/bs";
 
 const Navbar = () => {
-  const value = useAppSelector((state) => state.trueFalse.value);
+  const value = useAppSelector((state) => state.globalToggle.value);
   const dispatch = useAppDispatch();
-  console.log(value);
-
   if (value) {
     document.documentElement.classList.add("dark");
   } else {

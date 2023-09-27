@@ -1,4 +1,5 @@
 import Navbar from "../../common/Navbar";
+import AddPerson from "./AddPerson";
 import Banner from "./Banner";
 import Contact from "./Contact";
 import PersonPage from "./PersonPage";
@@ -14,6 +15,7 @@ const HomePageLayout = () => {
       <Contact></Contact>
       <Random></Random>
       <TodoPage></TodoPage>
+      <AddPerson></AddPerson>
     </>
   );
 };

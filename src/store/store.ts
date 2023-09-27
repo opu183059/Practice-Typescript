@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import counterSlice from './slices/counterSlice'
 import trueFalseSlice from './slices/trueFalseSlice'
 import todoSlice from './slices/todoSlice'
+import addPersonSlice from './slices/addPersonSlice'
 
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
         counter: counterSlice,
         globalToggle: trueFalseSlice,
         todo: todoSlice,
+        managePerson: addPersonSlice,
     },
 })
 

@@ -1,34 +1,17 @@
 import React from "react";
+import { useAppDispatch, useAppSelector } from "../../../store/app/hook";
+import { addMessage } from "../../../store/slices/messageSlice";
+import MessageRow from "./randomComponent/messageRow";
 
 const Contact = () => {
-  // const [formData, setFormData] = useState<FormData>({
-  //   id: "",
-  //   userName: "",
-  //   message: "",
-  // });
-
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     id: Date.now(),
-  //     [name]: value,
-  //   });
-  // };
-
-  // add review
-
-  // const handleContactUs = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   console.log(formData);
-  // };
-
+  const messages = useAppSelector((state) => state.message.messages);
+  const dispatch = useAppDispatch();
   const handleContactUs = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const name = form.userName.value;
     const message = form.message.value;
-    console.log("Name: ", name, "Message: ", message);
+    dispatch(addMessage({ name, message, id: messages.length + 1 }));
     form.reset();
   };
   return (
@@ -36,7 +19,7 @@ const Contact = () => {
       id="contact"
       className="bg-[url('https://cdn.wallpapersafari.com/89/46/oGOhiA.jpg')] bg-cover bg-fixed"
     >
-      <div className="section dark:bg-black/30">
+      <div className="section gap-5 dark:bg-black/30">
         <form
           onSubmit={handleContactUs}
           className="flex flex-col gap-4 border-2 p-10 rounded-xl bg-black/10 shadow-xl"
@@ -68,6 +51,16 @@ const Contact = () => {
             </button>
           </div>
         </form>
+
+        <div className="grid grid-cols-1 gap-3">
+          {messages.length > 0 &&
+            messages.map((messageData) => (
+              <MessageRow
+                key={messageData.id}
+                messageData={messageData}
+              ></MessageRow>
+            ))}
+        </div>
       </div>
     </div>
   );

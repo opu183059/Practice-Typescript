@@ -1,14 +1,14 @@
-import { personData } from "../../../../store/slices/addPersonSlice";
+import { removePerson } from "../../../../store/slices/addPersonSlice";
+import { useAppDispatch } from "../../../../store/app/hook";
+import { personData } from "../../../interface/interface";
 
 interface PersonDataRowProps {
   personInformation: personData;
   index: number;
 }
 
-const PersonDataRow: React.FC<PersonDataRowProps> = ({
-  personInformation,
-  index,
-}) => {
+const PersonDataRow = ({ personInformation, index }: PersonDataRowProps) => {
+  const dispatch = useAppDispatch();
   return (
     <>
       <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900">
@@ -28,7 +28,14 @@ const PersonDataRow: React.FC<PersonDataRowProps> = ({
           <p>{personInformation.number}</p>
         </td>
         <td>
-          <button className="btn-sm">Delete</button>
+          <button
+            className="btn-sm"
+            onClick={() => {
+              dispatch(removePerson(personInformation.id));
+            }}
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </>

@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-
-export interface personData {
-    id: number;
-    userName: string;
-    city: string
-    number: number;
-}
+import { personData } from "../../components/interface/interface"
 
 interface personArray {
     personArray: personData[]

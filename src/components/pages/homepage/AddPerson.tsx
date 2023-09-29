@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/app/hook";
 import { addPerson } from "../../../store/slices/addPersonSlice";
-import PersonDataRow from "./randomComponent/personDataRow";
+import PersonDataRow from "./randomComponent/PersonDataRow";
 
 const AddPerson = () => {
   const personData = useAppSelector((state) => state.managePerson.personArray);
@@ -35,12 +35,36 @@ const AddPerson = () => {
               placeholder="Name"
               className="border-[1px] border-black dark:border-white px-2 py-1 rounded bg-transparent"
             />
-            <input
-              type="text"
+            <select
               name="city"
-              placeholder="City"
-              className="border-[1px] border-black dark:border-white px-2 py-1 rounded bg-transparent"
-            />
+              id="city"
+              className="border-black dark:border-white p-1 bg-transparent border-[1px] rounded"
+            >
+              <option value="Dhaka" className="text-black">
+                Dhaka
+              </option>
+              <option value="Chittagong" className="text-black">
+                Chittagong
+              </option>
+              <option value="Borisal" className="text-black">
+                Borisal
+              </option>
+              <option value="Khulna" className="text-black">
+                Khulna
+              </option>
+              <option value="Rajshahi" className="text-black">
+                Rajshahi
+              </option>
+              <option value="Rangpur" className="text-black">
+                Rangpur
+              </option>
+              <option value="Mymansing" className="text-black">
+                Mymansing
+              </option>
+              <option value="Sylet" className="text-black">
+                Sylet
+              </option>
+            </select>
             <input
               type="number"
               name="number"

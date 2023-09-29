@@ -3,6 +3,7 @@ import counterSlice from './slices/counterSlice'
 import trueFalseSlice from './slices/trueFalseSlice'
 import todoSlice from './slices/todoSlice'
 import addPersonSlice from './slices/addPersonSlice'
+import messageSlice from './slices/messageSlice'
 
 
 export const store = configureStore({
@@ -11,6 +12,7 @@ export const store = configureStore({
         globalToggle: trueFalseSlice,
         todo: todoSlice,
         managePerson: addPersonSlice,
+        message: messageSlice,
     },
 })
 

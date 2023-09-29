@@ -12,10 +12,10 @@ const HomePageLayout = () => {
       <Navbar></Navbar>
       <Banner></Banner>
       <PersonPage></PersonPage>
-      <Contact></Contact>
       <Random></Random>
       <TodoPage></TodoPage>
       <AddPerson></AddPerson>
+      <Contact></Contact>
     </>
   );
 };

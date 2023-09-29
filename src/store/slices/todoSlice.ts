@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-
-export interface todoObject {
-    id: number;
-    task: String;
-}
+import { todoObject } from "../../components/interface/interface"
 
 interface todoList {
     todos: todoObject[]

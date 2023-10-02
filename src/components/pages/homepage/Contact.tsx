@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/app/hook";
 import { addMessage } from "../../../store/slices/messageSlice";
-import MessageRow from "./randomComponent/messageRow";
+import MessageRow from "./randomComponent/MessageRow";
 
 const Contact = () => {
   const messages = useAppSelector((state) => state.message.messages);

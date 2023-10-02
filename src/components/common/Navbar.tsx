@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/app/hook";
 import { toggle } from "../../store/slices/trueFalseSlice";
 import { BsFillMoonFill } from "react-icons/bs";
@@ -16,12 +17,15 @@ const Navbar = () => {
     <div className="w-full shadow-lg fixed z-50 bg-white dark:bg-black">
       <div className="container">
         <div className="flex justify-between py-4 ">
-          <div className="logo">TypeScript</div>
+          <Link to={"/"} className="logo">
+            TypeScript
+          </Link>
           <div className="right">
             <div className="menu">
-              <a href="#home">Home</a>
+              <Link to={"/"}>Home</Link>
               <a href="#persons">Persons</a>
               <a href="#contact">Contact</a>
+              <Link to={"/graphql"}>GraphQL</Link>
               <label className="inline-flex items-center space-x-4 cursor-pointer text-gray-900 dark:text-white">
                 <span className="relative border-[2px] dark:border-slate-100 border-black rounded-md p-1">
                   <input

@@ -1,10 +1,12 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import HomePageLayout from "./components/pages/homepage/HomePageLayout";
+import Navbar from "./components/common/Navbar";
 
 function App() {
   return (
     <>
-      <HomePageLayout></HomePageLayout>
+      <Navbar></Navbar>
+      <Outlet></Outlet>
     </>
   );
 }

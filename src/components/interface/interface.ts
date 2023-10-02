@@ -33,3 +33,14 @@ export interface message {
     name: string;
     message: string;
 }
+
+// character data interface 
+export interface charecterData {
+    gender: string;
+    id: string;
+    image: string;
+    location: { __typename: string, name: string };
+    name: string;
+    __typename: string;
+    episode: { name: string }[];
+}

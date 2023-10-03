@@ -15,6 +15,7 @@
 - React Icons
 - Typescript
 - Tailwind CSS
+- GraphQL Apolo client
 
 ## Getting Started
 

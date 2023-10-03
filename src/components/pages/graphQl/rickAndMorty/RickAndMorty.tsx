@@ -1,46 +1,33 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import CharacterCard from "./CharacterCard";
-import { charecterData } from "../../../interface/interface";
-
-const GET_CHARACTER = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        gender
-        location {
-          name
-        }
-        image
-        episode {
-          name
-        }
-      }
-    }
-  }
-`;
+// import { charecterData } from "../../../interface/interface";
+import { useEffect } from "react";
+import Loading from "../../../common/Loading";
+import { GET_CHARACTER } from "../../../graphQl/Queries";
+import { Character } from "../../../../__generated__/graphql";
 
 const RickAndMorty = () => {
   const { loading, error, data } = useQuery(GET_CHARACTER);
-
-  const characterData = data?.characters?.results;
-  console.log(characterData);
-
+  const charactersData = data?.characters?.results;
+  console.log(charactersData);
   if (error) {
     console.log(error.message);
   }
+
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   return (
     <div className="section py-20">
       {loading ? (
-        <h1>Loading...</h1>
+        <Loading></Loading>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {characterData &&
-            characterData.map((characterInformation: charecterData) => (
+          {charactersData &&
+            charactersData.map((characterInformation) => (
               <CharacterCard
-                key={characterInformation.id}
-                characterInformation={characterInformation}
+                key={characterInformation?.id}
+                characterInformation={characterInformation as Character}
               ></CharacterCard>
             ))}
         </div>

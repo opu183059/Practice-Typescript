@@ -1,7 +1,7 @@
-import { charecterData } from "../../../interface/interface";
+import { Character } from "../../../../__generated__/graphql";
 
 interface characterCardProps {
-  characterInformation: charecterData;
+  characterInformation: Character;
 }
 const CharacterCard = ({ characterInformation }: characterCardProps) => {
   const { gender, image, location, name, episode } = characterInformation || {};
@@ -11,14 +11,14 @@ const CharacterCard = ({ characterInformation }: characterCardProps) => {
     <div
       className={`rounded-md text-sm shadow-md hover:shadow-lg hover:-translate-y-2 duration-200 sm:w-96  ${
         episode.length < 5
-          ? "bg-red-50 dark:bg-red-950"
+          ? "bg-red-50 dark:bg-red-950 hover:bg-red-100"
           : "hover:bg-sky-50 dark:hover:bg-sky-950 dark:bg-gray-900"
       } dark:text-gray-100`}
     >
       <div className="flex items-center justify-between p-3">
         <div className="flex items-center space-x-2">
           <img
-            src={image}
+            src={image!}
             alt=""
             className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700"
           />
@@ -42,7 +42,7 @@ const CharacterCard = ({ characterInformation }: characterCardProps) => {
         </button>
       </div>
       <img
-        src={image}
+        src={image!}
         alt=""
         className="object-cover object-center w-full h-72 dark:bg-gray-500"
       />
@@ -118,7 +118,7 @@ const CharacterCard = ({ characterInformation }: characterCardProps) => {
         <div className="mt-1">
           <p>Name: {name}</p>
           <p>Gender: {gender}</p>
-          <p>Location: {location.name}</p>
+          <p>Location: {location?.name}</p>
           <p>Total Episodes Done: {episode.length}</p>
         </div>
       </div>

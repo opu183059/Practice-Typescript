@@ -9,7 +9,7 @@ const CharacterCard = ({ characterInformation }: characterCardProps) => {
   const likeNumber = Math.floor(Math.random() * 100);
   return (
     <div
-      className={`rounded-md text-sm shadow-md hover:shadow-lg hover:-translate-y-2 duration-200 sm:w-96  ${
+      className={`rounded-md text-sm shadow-md hover:shadow-lg hover:-translate-y-2 duration-200 sm:w-96 ${
         episode.length < 5
           ? "bg-red-50 dark:bg-red-950 hover:bg-red-100"
           : "hover:bg-sky-50 dark:hover:bg-sky-950 dark:bg-gray-900"
@@ -17,6 +17,7 @@ const CharacterCard = ({ characterInformation }: characterCardProps) => {
     >
       <div className="flex items-center justify-between p-3">
         <div className="flex items-center space-x-2">
+          {/* used ! after variable name to solve undefine error  */}
           <img
             src={image!}
             alt=""
@@ -41,6 +42,7 @@ const CharacterCard = ({ characterInformation }: characterCardProps) => {
           </svg>
         </button>
       </div>
+      {/* used ! after variable name to solve undefine error  */}
       <img
         src={image!}
         alt=""

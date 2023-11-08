@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query getCharecter{\n    characters {\n      results {\n        id\n        name\n        gender\n        location {\n          name\n        }\n        image\n        episode {\n          name\n        }\n      }\n    }\n  }\n": types.GetCharecterDocument,
+    "\n  query getCharecterData{\n    characters {\n      results {\n        id\n        name\n        gender\n        location {\n          name\n        }\n        image\n        episode {\n          name\n          air_date\n          characters {\n            name\n          }\n        }\n      }\n    }\n  }\n": types.GetCharecterDataDocument,
 };
 
 /**
@@ -33,7 +33,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query getCharecter{\n    characters {\n      results {\n        id\n        name\n        gender\n        location {\n          name\n        }\n        image\n        episode {\n          name\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query getCharecter{\n    characters {\n      results {\n        id\n        name\n        gender\n        location {\n          name\n        }\n        image\n        episode {\n          name\n        }\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query getCharecterData{\n    characters {\n      results {\n        id\n        name\n        gender\n        location {\n          name\n        }\n        image\n        episode {\n          name\n          air_date\n          characters {\n            name\n          }\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query getCharecterData{\n    characters {\n      results {\n        id\n        name\n        gender\n        location {\n          name\n        }\n        image\n        episode {\n          name\n          air_date\n          characters {\n            name\n          }\n        }\n      }\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

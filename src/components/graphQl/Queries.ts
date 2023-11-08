@@ -1,7 +1,7 @@
-import { gql } from "../../__generated__";
+import { gql } from "../../__generated__/gql";
 
 export const GET_CHARACTER = gql(`
-  query getCharecter{
+  query getCharecterData{
     characters {
       results {
         id
@@ -13,6 +13,10 @@ export const GET_CHARACTER = gql(`
         image
         episode {
           name
+          air_date
+          characters {
+            name
+          }
         }
       }
     }

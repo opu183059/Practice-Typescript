@@ -1,22 +1,26 @@
 import { useQuery } from "@apollo/client";
 import CharacterCard from "./CharacterCard";
-// import { charecterData } from "../../../interface/interface";
 import { useEffect } from "react";
 import Loading from "../../../common/Loading";
 import { GET_CHARACTER } from "../../../graphQl/Queries";
-import { Character } from "../../../../__generated__/graphql";
+import {
+  Character,
+  GetCharecterDataQuery,
+} from "../../../../__generated__/graphql";
 
 const RickAndMorty = () => {
-  const { loading, error, data } = useQuery(GET_CHARACTER);
+  const { loading, error, data } =
+    useQuery<GetCharecterDataQuery>(GET_CHARACTER);
+
   const charactersData = data?.characters?.results;
-  console.log(charactersData);
+  // console.log(charactersData);
   if (error) {
     console.log(error.message);
   }
-
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
+
   return (
     <div className="section py-20">
       {loading ? (
